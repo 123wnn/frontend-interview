@@ -1,6 +1,25 @@
 
 
 
+function a(x){
+    return function b(y){
+        console.log(y+x++);
+        return y+x++
+    }
+}
+
+var a1 = a(10)
+var a2 = a(20)
+
+
+a1(10)
+a2(10)
+// 百度面试题
+var a = {n: 1}
+var b = a;
+a.x = a = {n: 2}
+console.log(a.x);
+console.log(b.x)
 
 var name = 'global scope';
 function f(a) {
@@ -44,9 +63,9 @@ var obj = {
         }
     }
 }
-// console.log(obj.dose());
-// console.log(obj.dose()()) //global
-// console.log(obj.dose().call(this)) //global
+console.log(obj.dose());
+console.log(obj.dose()()) //global
+console.log(obj.dose().call(this)) //global
 var obj111=obj.dose;
 console.log(obj111());
 
